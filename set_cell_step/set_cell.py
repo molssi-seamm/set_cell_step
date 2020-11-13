@@ -181,7 +181,7 @@ class SetCell(seamm.Node):
             units=False
         )
         self.logger.debug(f'Formatted values:\n{pprint.pformat(PP)}')
-        printer.important(__(self.description_text(PP), indent=self.indent))
+        printer.normal(__(self.description_text(PP), indent=self.indent))
 
         method = P['method']
         system = self.get_variable('_system')
@@ -230,7 +230,9 @@ class SetCell(seamm.Node):
         text += f'    volume: {system.volume():10.1f} Å^3\n'
         text += f'   density: {system.density():11.2f} g/mL\n'
 
-        printer.important(__(text, indent=self.indent + 4 * ' '))
+        printer.normal(__(text, indent=self.indent + 4 * ' '))
+
+        printer.normal('')
 
         # Add other citations here or in the appropriate place in the code.
         # Add the bibtex to data/references.bib, and add a self.reference.cite
