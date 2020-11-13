@@ -78,14 +78,104 @@ class SetCellParameters(seamm.Parameters):
     """
 
     parameters = {
-        "time": {
-            "default": 100.0,
+        "method": {
+            "default": 'density',
+            "kind": "enumeration",
+            "default_units": None,
+            "enumeration": (
+                'density',
+                'volume',
+                'cell parameters',
+                'uniform contraction/expansion'
+            ),
+            "format_string": "",
+            "description": "Adjust cell by:",
+            "help_text": ("How to adjust the cell")
+        },
+        "density": {
+            "default": "1",
             "kind": "float",
-            "default_units": "ps",
+            "default_units": "g/mL",
             "enumeration": tuple(),
+            "format_string": ".3f",
+            "description": "Density:",
+            "help_text": ("The target density of the cell.")
+        },
+        "volume": {
+            "default": "1000",
+            "kind": "float",
+            "default_units": "Å^3",
+            "enumeration": tuple(),
+            "format_string": ".3f",
+            "description": "Volume:",
+            "help_text": ("The target volume of the cell.")
+        },
+        "expansion": {
+            "default": "1%",
+            "kind": "str",
+            "default_units": None,
+            "enumeration": tuple(),
+            "format_string": "",
+            "description": "Percent contraction (-)/expansion(+):",
+            "help_text": (
+                "The amount to contract (negative value) or expand (positive "
+                "value). The change is proportional to current cell lengths "
+                " and does not affect the angles."
+            )
+        },
+        "a": {
+            "default": "10",
+            "kind": "float",
+            "default_units": "Å",
+            "enumeration": None,
+            "format_string": ".2f",
+            "description": "a:",
+            "help_text": ("The length of the first side of the cell.")
+        },
+        "b": {
+            "default": "10",
+            "kind": "float",
+            "default_units": "Å",
+            "enumeration": None,
+            "format_string": ".2f",
+            "description": "b:",
+            "help_text": ("The length of the second side of the cell.")
+        },
+        "c": {
+            "default": "10",
+            "kind": "float",
+            "default_units": "Å",
+            "enumeration": None,
+            "format_string": ".2f",
+            "description": "c:",
+            "help_text": ("The length of the third side of the cell.")
+        },
+        "alpha": {
+            "default": 90.0,
+            "kind": "float",
+            "default_units": "degree",
+            "enumeration": None,
             "format_string": ".1f",
-            "description": "Simulation time:",
-            "help_text": ("The time to simulate in the dynamics run.")
+            "description": "alpha:",
+            "help_text": ("The angle between a and b.")
+        },
+        "beta": {
+            "default": 90.0,
+            "kind": "float",
+            "default_units": "degree",
+            "enumeration": None,
+            "format_string": ".1f",
+            "description": "beta:",
+            "help_text": ("The angle between a and c.")
+        },
+        "gamma": {
+            "default": 90.0,
+            "kind": "float",
+            "default_units": "degree",
+            "enumeration": None,
+            "format_string": ".1f",
+            "description": "gamma:",
+            "help_text": ("The angle between b and c.")
         },
     }
 

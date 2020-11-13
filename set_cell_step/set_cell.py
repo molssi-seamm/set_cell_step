@@ -51,11 +51,7 @@ class SetCell(seamm.Node):
     """
 
     def __init__(
-        self,
-        flowchart=None,
-        title='Set Cell',
-        extension=None,
-        logger=logger
+        self, flowchart=None, title='Set Cell', extension=None, logger=logger
     ):
         """A step for Set Cell in a SEAMM flowchart.
 
@@ -120,10 +116,43 @@ class SetCell(seamm.Node):
         if not P:
             P = self.parameters.values_to_dict()
 
-        text = (
-            'Please replace this with a short summary of the '
-            'Set Cell step, including key parameters.'
-        )
+        method = P['method']
+
+        if method == 'density':
+            density = P['density']
+            if self.is_expr(density):
+                text = (
+                    "The cell will be adjusted isotropically to a density "
+                    f"given by '{density}'."
+                )
+            else:
+                text = (
+                    "The cell will be adjusted isotropically to a density "
+                    f"of {density}."
+                )
+        elif method == 'volume':
+            volume = P['volume']
+            if self.is_expr(volume):
+                text = (
+                    "The cell will be adjusted isotropically to a volume "
+                    f"given by '{volume}'."
+                )
+            else:
+                text = (
+                    "The cell will be adjusted isotropically to a volume "
+                    f"of {volume}."
+                )
+        elif method == 'cell parameters':
+            text = "The cell parameters will be set as follows:"
+            for parameter in ('a', 'b', 'c', 'alpha', 'beta', 'gamma'):
+                text += f"  {parameter:>5}: {P[parameter]}"
+        elif method == 'uniform contraction/expansion':
+            text = (
+                f"The cell will be adjusted isotropically by {P['expansion']} "
+                "in each direction."
+            )
+        else:
+            raise RuntimeError(f"Don't recognize method '{method}'!")
 
         return self.header + '\n' + __(text, **P, indent=4 * ' ').__str__()
 
@@ -145,59 +174,66 @@ class SetCell(seamm.Node):
             context=seamm.flowchart_variables._data
         )
 
-        # Print what we are doing
-        printer.important(__(self.description_text(P), indent=self.indent))
-
-        # Temporary code just to print the parameters. You will need to change
-        # this!
-        for key in P:
-            print('{:>15s} = {}'.format(key, P[key]))
-            printer.normal(
-                __(
-                    '{key:>15s} = {value}',
-                    key=key,
-                    value=P[key],
-                    indent=4 * ' ',
-                    wrap=False,
-                    dedent=False
-                )
-            )
-
-        # Analyze the results
-        self.analyze()
-
-        # Since we have succeeded, add the citation.
-
-        self.references.cite(
-            raw=self._bibliography['set_cell_step'],
-            alias='set_cell_step',
-            module='set_cell_step',
-            level=1,
-            note='The principle citation for the set cell step in SEAMM.'
+        # Print what we are doing -- getting formatted values for printing
+        PP = self.parameters.current_values_to_dict(
+            context=seamm.flowchart_variables._data,
+            formatted=True,
+            units=False
         )
+        self.logger.debug(f'Formatted values:\n{pprint.pformat(PP)}')
+        printer.important(__(self.description_text(PP), indent=self.indent))
+
+        method = P['method']
+        system = self.get_variable('_system')
+
+        cell = system.cell.cell()
+        a, b, c, alpha, beta, gamma = cell.parameters
+        if method == 'density':
+            rho = P['density'].to('g/mL').magnitude
+            rho0 = system.density()
+            delta = (rho0 / rho)**(1 / 3)
+            a = a * delta
+            b = b * delta
+            c = c * delta
+        elif method == 'volume':
+            V = P['volume'].to('Å^3').magnitude
+            V0 = system.volume()
+            delta = (V / V0)**(1 / 3)
+            a = a * delta
+            b = b * delta
+            c = c * delta
+        elif method == 'cell parameters':
+            a = P['a'].to('Å').magnitude
+            b = P['b'].to('Å').magnitude
+            c = P['c'].to('Å').magnitude
+            alpha = P['alpha'].to('degree').magnitude
+            beta = P['beta'].to('degree').magnitude
+            gamma = P['gamma'].to('degree').magnitude
+        elif method == 'uniform contraction/expansion':
+            delta = (1 + P['expansion'])**(1 / 3)
+            a = a * delta
+            b = b * delta
+            c = c * delta
+        else:
+            raise RuntimeError(f"Don't recognize method '{method}'!")
+
+        system.cell.set_cell(a, b, c, alpha, beta, gamma)
+
+        text = '\nAdjusted the cell:\n'
+        text += f'         a: {a:8.3f}\n'
+        text += f'         b: {b:8.3f}\n'
+        text += f'         c: {c:8.3f}\n'
+        text += f'     alpha: {alpha:7.2f}\n'
+        text += f'      beta: {beta:7.2f}\n'
+        text += f'     gamma: {gamma:7.2f}\n'
+        text += '\n'
+        text += f'    volume: {system.volume():10.1f} Å^3\n'
+        text += f'   density: {system.density():11.2f} g/mL\n'
+
+        printer.important(__(text, indent=self.indent + 4 * ' '))
+
         # Add other citations here or in the appropriate place in the code.
         # Add the bibtex to data/references.bib, and add a self.reference.cite
         # similar to the above to actually add the citation to the references.
 
         return next_node
-
-    def analyze(self, indent='', **kwargs):
-        """Do any analysis of the output from this step.
-
-        Also print important results to the local step.out file using
-        'printer'.
-
-        Parameters
-        ----------
-        indent: str
-            An extra indentation for the output
-        """
-        printer.normal(
-            __(
-                'This is a placeholder for the results from the '
-                'Set Cell step',
-                indent=4 * ' ',
-                wrap=True,
-                dedent=False
-            )
-        )

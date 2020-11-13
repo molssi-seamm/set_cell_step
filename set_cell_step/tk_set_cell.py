@@ -122,6 +122,11 @@ class TkSetCell(seamm.TkNode):
         for key in P:
             self[key] = P[key].widget(frame)
 
+        # Setup bindings
+        self['method'].combobox.bind("<<ComboboxSelected>>", self.reset_dialog)
+        self['method'].combobox.bind("<Return>", self.reset_dialog)
+        self['method'].combobox.bind("<FocusOut>", self.reset_dialog)
+
         # and lay them out
         self.reset_dialog()
 
@@ -154,20 +159,41 @@ class TkSetCell(seamm.TkNode):
         for slave in frame.grid_slaves():
             slave.grid_forget()
 
-        # Shortcut for parameters
-        P = self.node.parameters
+        method = self['method'].get()
 
         # keep track of the row in a variable, so that the layout is flexible
         # if e.g. rows are skipped to control such as 'method' here
         row = 0
         widgets = []
-        for key in P:
-            self[key].grid(row=row, column=0, sticky=tk.EW)
-            widgets.append(self[key])
+        self['method'].grid(row=row, column=0, columnspan=2, sticky=tk.W)
+        row += 1
+
+        if method == 'density':
+            self['density'].grid(row=row, column=1, sticky=tk.EW)
+            widgets.append(self['density'])
             row += 1
+        elif method == 'volume':
+            self['volume'].grid(row=row, column=1, sticky=tk.EW)
+            widgets.append(self['volume'])
+            row += 1
+        elif method == 'cell parameters':
+            for parameter in ('a', 'b', 'c', 'alpha', 'beta', 'gamma'):
+                self[parameter].grid(row=row, column=1, sticky=tk.EW)
+                widgets.append(self[parameter])
+                row += 1
+        elif method == 'uniform contraction/expansion':
+            self['expansion'].grid(row=row, column=1, sticky=tk.EW)
+            widgets.append(self['expansion'])
+            row += 1
+        else:
+            raise RuntimeError(f"Don't recognize method '{method}'!")
 
         # Align the labels
         sw.align_labels(widgets)
+
+        # Offset the columns
+        self['frame'].grid_columnconfigure(0, minsize=50)
+        self['frame'].grid_columnconfigure(1, weight=1)
 
     def right_click(self, event):
         """

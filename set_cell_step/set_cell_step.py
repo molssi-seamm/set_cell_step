@@ -32,7 +32,7 @@ class SetCellStep(object):
             (
                 'An interface for Set Cell'
             ),
-        'group': 'Simulations',
+        'group': 'Building',
         'name': 'Set Cell'
     }  # yapf: disable
 
