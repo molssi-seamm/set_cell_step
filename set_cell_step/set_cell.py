@@ -108,6 +108,7 @@ class SetCell(seamm.Node):
         P: dict
             An optional dictionary of the current values of the control
             parameters.
+
         Returns
         -------
         str
