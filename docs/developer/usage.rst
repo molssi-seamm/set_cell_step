@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use the Set Cell Step in a project::
+To use the Set Cell plug-in in a project::
 
     import set_cell_step
