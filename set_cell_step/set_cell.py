@@ -229,8 +229,8 @@ class SetCell(seamm.Node):
         text += f'      beta: {beta:7.2f}\n'
         text += f'     gamma: {gamma:7.2f}\n'
         text += '\n'
-        text += f'    volume: {configuration.volume():10.1f} Å^3\n'
-        text += f'   density: {configuration.density():11.2f} g/mL\n'
+        text += f'    volume: {configuration.volume:10.1f} Å^3\n'
+        text += f'   density: {configuration.density:11.2f} g/mL\n'
 
         printer.normal(__(text, indent=self.indent + 4 * ' '))
 
