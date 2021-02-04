@@ -2,30 +2,40 @@
 Set Cell Step
 =============
 
+.. image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/set_cell_step
+   :target: https://github.com/molssi-seamm/set_cell_step/pulls
+   :alt: GitHub pull requests
 
-.. image:: https://img.shields.io/travis/molssi-seamm/set_cell_step.svg
-   :target: https://travis-ci.org/molssi-seamm/set_cell_step
-.. image:: https://pyup.io/repos/github/molssi-seamm/set_cell_step/shield.svg
-   :target: https://pyup.io/repos/github/molssi-seamm/set_cell_step/
-      :alt: Updates
-
+.. image:: https://github.com/molssi-seamm/set_cell_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/set_cell_step/actions
+   :alt: Build Status
 
 .. image:: https://codecov.io/gh/molssi-seamm/set_cell_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/set_cell_step
+   :alt: Code Coverage
 
-.. image:: https://readthedocs.org/projects/set-cell-step/badge/?version=latest
-   :target: https://set-cell-step.readthedocs.io/en/latest/?badge=latest
-      :alt: Documentation Status
+.. image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/set_cell_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/set_cell_step/context:python
+   :alt: Code Quality
+
+.. image:: https://github.com/molssi-seamm/set_cell_step/workflows/Documentation/badge.svg
+   :target: https://molssi-seamm.github.io/set_cell_step/index.html
+   :alt: Documentation Status
+
+.. image:: https://pyup.io/repos/github/molssi-seamm/set_cell_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/set_cell_step/
+   :alt: Updates for Dependencies
 
 .. image:: https://img.shields.io/pypi/v/set_cell_step.svg
    :target: https://pypi.python.org/pypi/set_cell_step
+   :alt: PyPi VERSION
 
 
 A plug-in for setting the periodic (unit) cell in a SEAMM flowchart
 
 
 * Free software: BSD-3-Clause
-* Documentation: https://set-cell-step.readthedocs.io.
+* Documentation: https://molssi-seamm.github.io/set_cell_step/index.html
 
 
 Features

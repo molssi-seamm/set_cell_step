@@ -185,20 +185,21 @@ class SetCell(seamm.Node):
         printer.normal(__(self.description_text(PP), indent=self.indent))
 
         method = P['method']
-        system = self.get_variable('_system')
+        system_db = self.get_variable('_system_db')
+        configuration = system_db.system.configuration
 
-        cell = system.cell.cell()
+        cell = configuration.cell
         a, b, c, alpha, beta, gamma = cell.parameters
         if method == 'density':
             rho = P['density'].to('g/mL').magnitude
-            rho0 = system.density()
+            rho0 = configuration.density
             delta = (rho0 / rho)**(1 / 3)
             a = a * delta
             b = b * delta
             c = c * delta
         elif method == 'volume':
             V = P['volume'].to('Å^3').magnitude
-            V0 = system.volume()
+            V0 = configuration.volume
             delta = (V / V0)**(1 / 3)
             a = a * delta
             b = b * delta
@@ -218,7 +219,7 @@ class SetCell(seamm.Node):
         else:
             raise RuntimeError(f"Don't recognize method '{method}'!")
 
-        system.cell.set_cell(a, b, c, alpha, beta, gamma)
+        configuration.cell.parameters = (a, b, c, alpha, beta, gamma)
 
         text = '\nAdjusted the cell:\n'
         text += f'         a: {a:8.3f}\n'
@@ -228,8 +229,8 @@ class SetCell(seamm.Node):
         text += f'      beta: {beta:7.2f}\n'
         text += f'     gamma: {gamma:7.2f}\n'
         text += '\n'
-        text += f'    volume: {system.volume():10.1f} Å^3\n'
-        text += f'   density: {system.density():11.2f} g/mL\n'
+        text += f'    volume: {configuration.volume:10.1f} Å^3\n'
+        text += f'   density: {configuration.density:11.2f} g/mL\n'
 
         printer.normal(__(text, indent=self.indent + 4 * ' '))
 
