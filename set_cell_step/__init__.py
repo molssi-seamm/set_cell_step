@@ -15,6 +15,7 @@ from set_cell_step.tk_set_cell import TkSetCell  # noqa: F401, E501
 
 # Handle versioneer
 from ._version import get_versions
+
 __author__ = """Paul Saxe"""
 __email__ = 'psaxe@molssi.org'
 versions = get_versions()
