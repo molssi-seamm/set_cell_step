@@ -9,7 +9,7 @@ dependencies:
   - pip
 
   # Dependencies for this module
- - seamm
+  - seamm
 
   # Testing
   - codecov
