@@ -1,6 +1,6 @@
 molsystem
 numpy
 seamm>=2026.10.17
-seamm-md-analysis>=2026.10.17.3
+seamm-md-analysis>=2026.10.17.4
 seamm-util
 seamm-widgets
