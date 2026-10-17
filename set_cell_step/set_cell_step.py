@@ -28,12 +28,9 @@ class SetCellStep(object):
     """
 
     my_description = {
-        'description':
-            (
-                'An interface for Set Cell'
-            ),
-        'group': 'Building',
-        'name': 'Set Cell'
+        "description": ("An interface for Set Cell"),
+        "group": "Building",
+        "name": "Set Cell",
     }  # yapf: disable
 
     def __init__(self, flowchart=None, gui=None):
@@ -44,8 +41,7 @@ class SetCellStep(object):
         pass
 
     def description(self):
-        """Return a description of what this extension does
-        """
+        """Return a description of what this extension does"""
         return SetCellStep.my_description
 
     def create_node(self, flowchart=None, **kwargs):

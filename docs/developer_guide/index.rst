@@ -8,8 +8,17 @@ Contents:
 
    installation
    usage
-   modules
    contributing
+
+Campaigns
+---------
+Notes for development campaigns
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+
+   campaigns/index
 
 Indices and tables
 ------------------

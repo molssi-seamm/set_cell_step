@@ -8,14 +8,14 @@ Installation
 Stable release
 --------------
 
-To install the Set Cell plug-in, run this command in your terminal:
+To install the Set Cell Step, run this command in your terminal:
 
 .. code-block:: console
 
     $ pip install set_cell_step
 
-This is the preferred method to install Set Cell
-plug-in, as it will always install the most recent stable release. 
+This is the preferred method to install Set Cell Step, as it will always
+install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -27,8 +27,7 @@ you through the process.
 From sources
 ------------
 
-The sources for the Set Cell plug-in can be downloaded
-from the `Github repo`_.
+The sources for Set Cell Step can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
@@ -46,7 +45,9 @@ Once you have a copy of the source, you can install it with:
 
 .. code-block:: console
 
-    $ python setup.py install
+    $ pip install .
+
+from inside the top-level directory of the source code.    
 
 
 .. _Github repo: https://github.com/molssi-seamm/set_cell_step

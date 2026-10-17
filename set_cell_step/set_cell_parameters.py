@@ -79,38 +79,64 @@ class SetCellParameters(seamm.Parameters):
 
     parameters = {
         "method": {
-            "default": 'density',
+            "default": "density",
             "kind": "enumeration",
             "default_units": None,
             "enumeration": (
-                'density',
-                'volume',
-                'cell parameters',
-                'uniform contraction/expansion'
+                "density",
+                "volume",
+                "the mean volume of the last NPT run",
+                "cell parameters",
+                "uniform contraction/expansion",
             ),
             "format_string": "",
             "description": "Adjust cell by:",
-            "help_text": ("How to adjust the cell")
+            "help_text": (
+                "How to adjust the cell: to a density or volume, which may be "
+                "variables; to the mean volume of the last NPT run earlier in the "
+                "flowchart, over its equilibrated part; to given cell parameters; "
+                "or by a uniform contraction or expansion."
+            ),
+        },
+        "scaling": {
+            "default": "automatic",
+            "kind": "enumeration",
+            "default_units": None,
+            "enumeration": ("automatic", "molecule centers", "atoms"),
+            "format_string": "",
+            "description": "Move the contents by:",
+            "help_text": (
+                "How the contents follow the cell. 'molecule centers' moves each "
+                "molecule rigidly with its center of mass, as a liquid of molecules "
+                "needs: scaling the atoms would stretch the bonds. 'atoms' scales "
+                "every atom with the cell (an affine transformation), as for a "
+                "solid. 'automatic' moves the molecules' centers when the system is "
+                "made of separate molecules, none spanning the cell, and the atoms "
+                "otherwise."
+            ),
         },
         "density": {
+            "applies_when": {"method": "density"},
             "default": "1",
             "kind": "float",
             "default_units": "g/mL",
             "enumeration": tuple(),
             "format_string": ".3f",
             "description": "Density:",
-            "help_text": ("The target density of the cell.")
+            "help_text": ("The target density of the cell."),
         },
         "volume": {
+            "applies_when": {"method": "volume"},
             "default": "1000",
             "kind": "float",
             "default_units": "Å^3",
             "enumeration": tuple(),
             "format_string": ".3f",
             "description": "Volume:",
-            "help_text": ("The target volume of the cell.")
+            "help_text": ("The target volume of the cell."),
         },
         "expansion": {
+            "applies_when": {"method": "uniform contraction/expansion"},
             "default": "1%",
             "kind": "str",
             "default_units": None,
@@ -121,61 +147,67 @@ class SetCellParameters(seamm.Parameters):
                 "The amount to contract (negative value) or expand (positive "
                 "value). The change is proportional to current cell lengths "
                 " and does not affect the angles."
-            )
+            ),
         },
         "a": {
+            "applies_when": {"method": "cell parameters"},
             "default": "10",
             "kind": "float",
             "default_units": "Å",
             "enumeration": None,
             "format_string": ".2f",
             "description": "a:",
-            "help_text": ("The length of the first side of the cell.")
+            "help_text": ("The length of the first side of the cell."),
         },
         "b": {
+            "applies_when": {"method": "cell parameters"},
             "default": "10",
             "kind": "float",
             "default_units": "Å",
             "enumeration": None,
             "format_string": ".2f",
             "description": "b:",
-            "help_text": ("The length of the second side of the cell.")
+            "help_text": ("The length of the second side of the cell."),
         },
         "c": {
+            "applies_when": {"method": "cell parameters"},
             "default": "10",
             "kind": "float",
             "default_units": "Å",
             "enumeration": None,
             "format_string": ".2f",
             "description": "c:",
-            "help_text": ("The length of the third side of the cell.")
+            "help_text": ("The length of the third side of the cell."),
         },
         "alpha": {
+            "applies_when": {"method": "cell parameters"},
             "default": 90.0,
             "kind": "float",
             "default_units": "degree",
             "enumeration": None,
             "format_string": ".1f",
             "description": "alpha:",
-            "help_text": ("The angle between a and b.")
+            "help_text": ("The angle between a and b."),
         },
         "beta": {
+            "applies_when": {"method": "cell parameters"},
             "default": 90.0,
             "kind": "float",
             "default_units": "degree",
             "enumeration": None,
             "format_string": ".1f",
             "description": "beta:",
-            "help_text": ("The angle between a and c.")
+            "help_text": ("The angle between a and c."),
         },
         "gamma": {
+            "applies_when": {"method": "cell parameters"},
             "default": 90.0,
             "kind": "float",
             "default_units": "degree",
             "enumeration": None,
             "format_string": ".1f",
             "description": "gamma:",
-            "help_text": ("The angle between b and c.")
+            "help_text": ("The angle between b and c."),
         },
     }
 
@@ -197,9 +229,8 @@ class SetCellParameters(seamm.Parameters):
         None
         """
 
-        logger.debug('SetCellParameters.__init__')
+        logger.debug("SetCellParameters.__init__")
 
         super().__init__(
-            defaults={**SetCellParameters.parameters, **defaults},
-            data=data
+            defaults={**SetCellParameters.parameters, **defaults}, data=data
         )
