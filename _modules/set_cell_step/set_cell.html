@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>set_cell_step.set_cell &mdash; SEAMM Set Cell Plug-in 2021.10.14+5.g3fc1f06 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>set_cell_step.set_cell &#8212; SEAMM Set Cell Plug-in 2026.10.17 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -15,112 +47,530 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
 <!-- End Google Tag Manager -->
 
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    <script src="../../_static/documentation_options.js?v=fed69469"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/set_cell_step/set_cell';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
 
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
-</head>
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2026.10.17" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-<body class="wy-body-for-nav">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQXXTJ2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
- 
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../../index.html" class="icon icon-home">
-            SEAMM Set Cell Plug-in
-          </a>
-              <div class="version">
-                2021.10.14+5.g3fc1f06
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer/index.html">Developer Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../history.html">History</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference external" href="https://molssi-seamm.github.io">Main SEAMM documentation</a></li>
-</ul>
 
-        </div>
-      </div>
-    </nav>
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">SEAMM Set Cell Plug-in</a>
-      </nav>
+  
+    
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">set_cell_step.set_cell</li>
-      <li class="wy-breadcrumbs-aside">
-      </li>
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Set Cell</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+    Developer Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Documentation
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../authors.html">
+    Development Team
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../history.html">
+    History
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    Main SEAMM documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+    Developer Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../authors.html">
+    Development Team
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    History
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    Main SEAMM documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">set_cell_step.set_cell</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <h1>Source code for set_cell_step.set_cell</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="sd">&quot;&quot;&quot;Non-graphical part of the Set Cell step in a SEAMM flowchart</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""Non-graphical part of the Set Cell step in a SEAMM flowchart"""</span>
 
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">pprint</span>  <span class="c1"># noqa: F401</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="kn">import</span> <span class="nn">set_cell_step</span>
-<span class="kn">import</span> <span class="nn">seamm</span>
-<span class="kn">from</span> <span class="nn">seamm_util</span> <span class="kn">import</span> <span class="n">ureg</span><span class="p">,</span> <span class="n">Q_</span>  <span class="c1"># noqa: F401</span>
-<span class="kn">import</span> <span class="nn">seamm_util.printing</span> <span class="k">as</span> <span class="nn">printing</span>
-<span class="kn">from</span> <span class="nn">seamm_util.printing</span> <span class="kn">import</span> <span class="n">FormattedText</span> <span class="k">as</span> <span class="n">__</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pprint</span>  <span class="c1"># noqa: F401</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">set_cell_step</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seamm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seamm_util</span><span class="w"> </span><span class="kn">import</span> <span class="n">ureg</span><span class="p">,</span> <span class="n">Q_</span>  <span class="c1"># noqa: F401</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seamm_util.printing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">printing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seamm_util.printing</span><span class="w"> </span><span class="kn">import</span> <span class="n">FormattedText</span> <span class="k">as</span> <span class="n">__</span>
 
 <span class="c1"># In addition to the normal logger, two logger-like printing facilities are</span>
-<span class="c1"># defined: &#39;job&#39; and &#39;printer&#39;. &#39;job&#39; send output to the main job.out file for</span>
+<span class="c1"># defined: 'job' and 'printer'. 'job' send output to the main job.out file for</span>
 <span class="c1"># the job, and should be used very sparingly, typically to echo what this step</span>
 <span class="c1"># will do in the initial summary of the job.</span>
 <span class="c1">#</span>
-<span class="c1"># &#39;printer&#39; sends output to the file &#39;step.out&#39; in this steps working</span>
+<span class="c1"># 'printer' sends output to the file 'step.out' in this steps working</span>
 <span class="c1"># directory, and is used for all normal output from this step.</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">job</span> <span class="o">=</span> <span class="n">printing</span><span class="o">.</span><span class="n">getPrinter</span><span class="p">()</span>
-<span class="n">printer</span> <span class="o">=</span> <span class="n">printing</span><span class="o">.</span><span class="n">getPrinter</span><span class="p">(</span><span class="s1">&#39;Set Cell&#39;</span><span class="p">)</span>
+<span class="n">printer</span> <span class="o">=</span> <span class="n">printing</span><span class="o">.</span><span class="n">getPrinter</span><span class="p">(</span><span class="s2">"Set Cell"</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="SetCell"><a class="viewcode-back" href="../../developer/set_cell_step.html#set_cell_step.set_cell.SetCell">[docs]</a><span class="k">class</span> <span class="nc">SetCell</span><span class="p">(</span><span class="n">seamm</span><span class="o">.</span><span class="n">Node</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="move_contents">
+<a class="viewcode-back" href="../../api/set_cell_step.html#set_cell_step.set_cell.move_contents">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">move_contents</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">how</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Set a new cell and move the contents with it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    configuration : molsystem._Configuration</span>
+<span class="sd">        The periodic structure to change.</span>
+<span class="sd">    parameters : (a, b, c, alpha, beta, gamma)</span>
+<span class="sd">        The new cell parameters, in Å and degrees.</span>
+<span class="sd">    how : str</span>
+<span class="sd">        "molecule centers" to make each molecule whole and move it rigidly with its</span>
+<span class="sd">        center of mass, keeping its bonds; "atoms" for an affine transformation of</span>
+<span class="sd">        every atom.</span>
+<span class="sd">    """</span>
+    <span class="n">old_cell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">vectors</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">how</span> <span class="o">==</span> <span class="s2">"molecule centers"</span><span class="p">:</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">reimage_bonded_atoms</span><span class="p">(</span><span class="n">reimage_molecules</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_coordinates</span><span class="p">(</span><span class="n">fractionals</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+        <span class="n">masses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">atomic_masses</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="n">parameters</span>
+        <span class="n">new_cell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">vectors</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">old_cell</span><span class="p">)</span> <span class="o">@</span> <span class="n">new_cell</span>
+        <span class="k">for</span> <span class="n">molecule</span> <span class="ow">in</span> <span class="n">configuration</span><span class="o">.</span><span class="n">find_molecules</span><span class="p">(</span><span class="n">as_indices</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">masses</span><span class="p">[</span><span class="n">molecule</span><span class="p">]</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">xyz</span><span class="p">[</span><span class="n">molecule</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">m</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="n">xyz</span><span class="p">[</span><span class="n">molecule</span><span class="p">]</span> <span class="o">+=</span> <span class="n">center</span> <span class="o">@</span> <span class="n">transform</span> <span class="o">-</span> <span class="n">center</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">set_coordinates</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">fractionals</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">how</span> <span class="o">==</span> <span class="s2">"atoms"</span><span class="p">:</span>
+        <span class="c1"># The fractional coordinates stay the same</span>
+        <span class="n">fractionals</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_coordinates</span><span class="p">(</span><span class="n">fractionals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="n">parameters</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">set_coordinates</span><span class="p">(</span><span class="n">fractionals</span><span class="p">,</span> <span class="n">fractionals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Don't know how to move the contents: '</span><span class="si">{</span><span class="n">how</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SetCell">
+<a class="viewcode-back" href="../../api/set_cell_step.html#set_cell_step.set_cell.SetCell">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SetCell</span><span class="p">(</span><span class="n">seamm</span><span class="o">.</span><span class="n">Node</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    The non-graphical part of a Set Cell step in a flowchart.</span>
 
 <span class="sd">    Attributes</span>
@@ -142,12 +592,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span class="sd">    --------</span>
 <span class="sd">    TkSetCell,</span>
 <span class="sd">    SetCell, SetCellParameters</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">flowchart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Set Cell&#39;</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span>
-    <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;A step for Set Cell in a SEAMM flowchart.</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flowchart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Set Cell"</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""A step for Set Cell in a SEAMM flowchart.</span>
 
 <span class="sd">        You may wish to change the title above, which is the string displayed</span>
 <span class="sd">        in the box representing the step in the flowchart.</span>
@@ -167,33 +615,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        None</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Creating Set Cell </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+<span class="sd">        """</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"Creating Set Cell </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">flowchart</span><span class="o">=</span><span class="n">flowchart</span><span class="p">,</span>
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Set Cell&#39;</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Set Cell"</span><span class="p">,</span>
             <span class="n">extension</span><span class="o">=</span><span class="n">extension</span><span class="p">,</span>
             <span class="n">module</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span>
-            <span class="n">logger</span><span class="o">=</span><span class="n">logger</span>
+            <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
         <span class="p">)</span>  <span class="c1"># yapf: disable</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="n">set_cell_step</span><span class="o">.</span><span class="n">SetCellParameters</span><span class="p">()</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;The semantic version of this module.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The semantic version of this module."""</span>
         <span class="k">return</span> <span class="n">set_cell_step</span><span class="o">.</span><span class="n">__version__</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">git_revision</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;The git version of this module.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">git_revision</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The git version of this module."""</span>
         <span class="k">return</span> <span class="n">set_cell_step</span><span class="o">.</span><span class="n">__git_revision__</span>
 
-<div class="viewcode-block" id="SetCell.description_text"><a class="viewcode-back" href="../../developer/set_cell_step.html#set_cell_step.set_cell.SetCell.description_text">[docs]</a>    <span class="k">def</span> <span class="nf">description_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the text description of what this step will do.</span>
+<div class="viewcode-block" id="SetCell.description_text">
+<a class="viewcode-back" href="../../api/set_cell_step.html#set_cell_step.set_cell.SetCell.description_text">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Create the text description of what this step will do.</span>
 <span class="sd">        The dictionary of control values is passed in as P so that</span>
 <span class="sd">        the code can test values, etc.</span>
 
@@ -207,52 +655,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span class="sd">        -------</span>
 <span class="sd">        str</span>
 <span class="sd">            A description of the current step.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">P</span><span class="p">:</span>
             <span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">values_to_dict</span><span class="p">()</span>
 
-        <span class="n">method</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;method&#39;</span><span class="p">]</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"method"</span><span class="p">]</span>
 
-        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;density&#39;</span><span class="p">:</span>
-            <span class="n">density</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"density"</span><span class="p">:</span>
+            <span class="n">density</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"density"</span><span class="p">]</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_expr</span><span class="p">(</span><span class="n">density</span><span class="p">):</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="s2">&quot;The cell will be adjusted isotropically to a density &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;given by &#39;</span><span class="si">{</span><span class="n">density</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                    <span class="s2">"The cell will be adjusted isotropically to a density "</span>
+                    <span class="sa">f</span><span class="s2">"given by '</span><span class="si">{</span><span class="n">density</span><span class="si">}</span><span class="s2">'."</span>
                 <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="s2">&quot;The cell will be adjusted isotropically to a density &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;of </span><span class="si">{</span><span class="n">density</span><span class="si">}</span><span class="s2">.&quot;</span>
+                    <span class="s2">"The cell will be adjusted isotropically to a density "</span>
+                    <span class="sa">f</span><span class="s2">"of </span><span class="si">{</span><span class="n">density</span><span class="si">}</span><span class="s2">."</span>
                 <span class="p">)</span>
-        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;volume&#39;</span><span class="p">:</span>
-            <span class="n">volume</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"volume"</span><span class="p">:</span>
+            <span class="n">volume</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"volume"</span><span class="p">]</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_expr</span><span class="p">(</span><span class="n">volume</span><span class="p">):</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="s2">&quot;The cell will be adjusted isotropically to a volume &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;given by &#39;</span><span class="si">{</span><span class="n">volume</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                    <span class="s2">"The cell will be adjusted isotropically to a volume "</span>
+                    <span class="sa">f</span><span class="s2">"given by '</span><span class="si">{</span><span class="n">volume</span><span class="si">}</span><span class="s2">'."</span>
                 <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="s2">&quot;The cell will be adjusted isotropically to a volume &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;of </span><span class="si">{</span><span class="n">volume</span><span class="si">}</span><span class="s2">.&quot;</span>
+                    <span class="s2">"The cell will be adjusted isotropically to a volume "</span>
+                    <span class="sa">f</span><span class="s2">"of </span><span class="si">{</span><span class="n">volume</span><span class="si">}</span><span class="s2">."</span>
                 <span class="p">)</span>
-        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;cell parameters&#39;</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;The cell parameters will be set as follows:&quot;</span>
-            <span class="k">for</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">):</span>
-                <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">parameter</span><span class="si">:</span><span class="s2">&gt;5</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;uniform contraction/expansion&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"the mean volume of the last NPT run"</span><span class="p">:</span>
             <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;The cell will be adjusted isotropically by </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;expansion&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="s2">&quot;in each direction.&quot;</span>
+                <span class="s2">"The cell will be adjusted isotropically to the mean volume of the "</span>
+                <span class="s2">"last NPT run earlier in the flowchart, over its equilibrated part."</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"cell parameters"</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s2">"The cell parameters will be set as follows:"</span>
+            <span class="k">for</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"alpha"</span><span class="p">,</span> <span class="s2">"beta"</span><span class="p">,</span> <span class="s2">"gamma"</span><span class="p">):</span>
+                <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">parameter</span><span class="si">:</span><span class="s2">&gt;5</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"uniform contraction/expansion"</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"The cell will be adjusted isotropically by </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">'expansion'</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span>
+                <span class="s2">"in each direction."</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Don&#39;t recognize method &#39;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&#39;!&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Don't recognize method '</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">'!"</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="o">**</span><span class="n">P</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
+        <span class="n">scaling</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"scaling"</span><span class="p">,</span> <span class="s2">"automatic"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scaling</span> <span class="o">==</span> <span class="s2">"automatic"</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
+                <span class="s2">" The molecules will move rigidly with their centers if the system "</span>
+                <span class="s2">"is made of separate molecules; otherwise the atoms are scaled."</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">scaling</span> <span class="o">==</span> <span class="s2">"molecule centers"</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="s2">" The molecules will move rigidly with their centers."</span>
+        <span class="k">elif</span> <span class="n">scaling</span> <span class="o">==</span> <span class="s2">"atoms"</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="s2">" The atoms will be scaled with the cell."</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">" The contents will be moved as '</span><span class="si">{</span><span class="n">scaling</span><span class="si">}</span><span class="s2">' gives."</span>
 
-<div class="viewcode-block" id="SetCell.run"><a class="viewcode-back" href="../../developer/set_cell_step.html#set_cell_step.set_cell.SetCell.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run a Set Cell step.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="o">**</span><span class="n">P</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="s2">" "</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SetCell.run">
+<a class="viewcode-back" href="../../api/set_cell_step.html#set_cell_step.set_cell.SetCell.run">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Run a Set Cell step.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -262,7 +731,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span class="sd">        -------</span>
 <span class="sd">        seamm.Node</span>
 <span class="sd">            The next node object in the flowchart.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">next_node</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">printer</span><span class="p">)</span>
         <span class="c1"># Get the values of the parameters, dereferencing any variables</span>
         <span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">current_values_to_dict</span><span class="p">(</span>
@@ -271,114 +740,196 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <span class="c1"># Print what we are doing -- getting formatted values for printing</span>
         <span class="n">PP</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">current_values_to_dict</span><span class="p">(</span>
-            <span class="n">context</span><span class="o">=</span><span class="n">seamm</span><span class="o">.</span><span class="n">flowchart_variables</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span>
-            <span class="n">formatted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">units</span><span class="o">=</span><span class="kc">False</span>
+            <span class="n">context</span><span class="o">=</span><span class="n">seamm</span><span class="o">.</span><span class="n">flowchart_variables</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">formatted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="kc">False</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Formatted values:</span><span class="se">\n</span><span class="si">{</span><span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="n">PP</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Formatted values:</span><span class="se">\n</span><span class="si">{</span><span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="n">PP</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">description_text</span><span class="p">(</span><span class="n">PP</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span><span class="p">))</span>
 
-        <span class="n">method</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;method&#39;</span><span class="p">]</span>
-        <span class="n">system_db</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s1">&#39;_system_db&#39;</span><span class="p">)</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"method"</span><span class="p">]</span>
+        <span class="n">system_db</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s2">"_system_db"</span><span class="p">)</span>
         <span class="n">configuration</span> <span class="o">=</span> <span class="n">system_db</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">configuration</span>
 
         <span class="n">cell</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">cell</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">parameters</span>
-        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;density&#39;</span><span class="p">:</span>
-            <span class="n">rho</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;g/mL&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-            <span class="n">rho0</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">density</span>
-            <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho0</span> <span class="o">/</span> <span class="n">rho</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">delta</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">delta</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">delta</span>
-        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;volume&#39;</span><span class="p">:</span>
-            <span class="n">V</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;Å^3&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-            <span class="n">V0</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">volume</span>
-            <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">V</span> <span class="o">/</span> <span class="n">V0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">delta</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">delta</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">delta</span>
-        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;cell parameters&#39;</span><span class="p">:</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;Å&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;Å&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;Å&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-            <span class="n">alpha</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;degree&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-            <span class="n">beta</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;beta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;degree&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-            <span class="n">gamma</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;gamma&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;degree&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
-        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;uniform contraction/expansion&#39;</span><span class="p">:</span>
-            <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">P</span><span class="p">[</span><span class="s1">&#39;expansion&#39;</span><span class="p">])</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">delta</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">delta</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">delta</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"density"</span><span class="p">,</span> <span class="s2">"volume"</span><span class="p">,</span> <span class="s2">"the mean volume of the last NPT run"</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"density"</span><span class="p">:</span>
+                <span class="n">rho</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"density"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"g/mL"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+                <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">density</span> <span class="o">/</span> <span class="n">rho</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"volume"</span><span class="p">:</span>
+                    <span class="n">V</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"volume"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"Å^3"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">V</span><span class="p">,</span> <span class="n">where</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_npt_volume</span><span class="p">()</span>
+                    <span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+                        <span class="n">__</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">"The mean volume of the NPT run </span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">V</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> Å^3."</span><span class="p">,</span>
+                            <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="s2">" "</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">V</span> <span class="o">/</span> <span class="n">configuration</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">delta</span><span class="p">,</span> <span class="n">b</span> <span class="o">*</span> <span class="n">delta</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">delta</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"cell parameters"</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"a"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"Å"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"b"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"Å"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"Å"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"alpha"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"degree"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+            <span class="n">beta</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"beta"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"degree"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+            <span class="n">gamma</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"gamma"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"degree"</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"uniform contraction/expansion"</span><span class="p">:</span>
+            <span class="n">expansion</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"expansion"</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">expansion</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">expansion</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">expansion</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"%"</span><span class="p">)</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">expansion</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">delta</span><span class="p">,</span> <span class="n">b</span> <span class="o">*</span> <span class="n">delta</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">delta</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Don&#39;t recognize method &#39;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&#39;!&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Don't recognize method '</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">'!"</span><span class="p">)</span>
 
-        <span class="n">configuration</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+        <span class="n">scaling</span><span class="p">,</span> <span class="n">why</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scaling</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"scaling"</span><span class="p">,</span> <span class="s2">"automatic"</span><span class="p">),</span> <span class="n">configuration</span><span class="p">)</span>
+        <span class="n">move_contents</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">),</span> <span class="n">scaling</span><span class="p">)</span>
 
-        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Adjusted the cell:</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;         a: </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">8.3f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;         b: </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">8.3f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;         c: </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s1">8.3f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;     alpha: </span><span class="si">{</span><span class="n">alpha</span><span class="si">:</span><span class="s1">7.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;      beta: </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">7.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;     gamma: </span><span class="si">{</span><span class="n">gamma</span><span class="si">:</span><span class="s1">7.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    volume: </span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">volume</span><span class="si">:</span><span class="s1">10.1f</span><span class="si">}</span><span class="s1"> Å^3</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;   density: </span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">density</span><span class="si">:</span><span class="s1">11.2f</span><span class="si">}</span><span class="s1"> g/mL</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Adjusted the cell:</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"         a: </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"         b: </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"         c: </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"     alpha: </span><span class="si">{</span><span class="n">alpha</span><span class="si">:</span><span class="s2">7.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"      beta: </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s2">7.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"     gamma: </span><span class="si">{</span><span class="n">gamma</span><span class="si">:</span><span class="s2">7.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"    volume: </span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">volume</span><span class="si">:</span><span class="s2">10.1f</span><span class="si">}</span><span class="s2"> Å^3</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"   density: </span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">density</span><span class="si">:</span><span class="s2">11.4f</span><span class="si">}</span><span class="s2"> g/mL</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="s2">" "</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="n">why</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="s2">" "</span><span class="p">))</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
 
-        <span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="s1">&#39; &#39;</span><span class="p">))</span>
-
-        <span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">store_results</span><span class="p">(</span>
+            <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">"volume"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">volume</span><span class="p">,</span>
+                <span class="s2">"density"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">density</span><span class="p">,</span>
+                <span class="s2">"a"</span><span class="p">:</span> <span class="n">a</span><span class="p">,</span>
+                <span class="s2">"b"</span><span class="p">:</span> <span class="n">b</span><span class="p">,</span>
+                <span class="s2">"c"</span><span class="p">:</span> <span class="n">c</span><span class="p">,</span>
+                <span class="s2">"alpha"</span><span class="p">:</span> <span class="n">alpha</span><span class="p">,</span>
+                <span class="s2">"beta"</span><span class="p">:</span> <span class="n">beta</span><span class="p">,</span>
+                <span class="s2">"gamma"</span><span class="p">:</span> <span class="n">gamma</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
 
         <span class="c1"># Add other citations here or in the appropriate place in the code.</span>
         <span class="c1"># Add the bibtex to data/references.bib, and add a self.reference.cite</span>
         <span class="c1"># similar to the above to actually add the citation to the references.</span>
 
-        <span class="k">return</span> <span class="n">next_node</span></div></div>
+        <span class="k">return</span> <span class="n">next_node</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_npt_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""The mean volume of the last NPT run, over its equilibrated part.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        (float, str)</span>
+<span class="sd">            The volume in Å^3, and which run it is, for the output.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">seamm_md_analysis</span><span class="w"> </span><span class="kn">import</span> <span class="n">open_md</span><span class="p">,</span> <span class="n">run_state</span>
+
+        <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_exists</span><span class="p">(</span><span class="s2">"_md_runs"</span><span class="p">):</span>
+            <span class="n">records</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s2">"_md_runs"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">records</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"ensemble"</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"NPT"</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">with</span> <span class="n">open_md</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s2">"path"</span><span class="p">])</span> <span class="k">as</span> <span class="n">md</span><span class="p">:</span>
+                <span class="n">volume</span> <span class="o">=</span> <span class="n">run_state</span><span class="p">(</span><span class="n">md</span><span class="p">)</span><span class="o">.</span><span class="n">volume</span>
+            <span class="k">if</span> <span class="n">volume</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">volume</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"of step </span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'step'</span><span class="p">,</span><span class="w"> </span><span class="n">record</span><span class="p">[</span><span class="s1">'path'</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+            <span class="s2">"Set Cell is to use the mean volume of the last NPT run, but no NPT run "</span>
+            <span class="s2">"earlier in the flowchart recorded its volume."</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_scaling</span><span class="p">(</span><span class="n">scaling</span><span class="p">,</span> <span class="n">configuration</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""How to move the contents, and why, for the output."""</span>
+        <span class="k">if</span> <span class="n">scaling</span> <span class="o">==</span> <span class="s2">"molecule centers"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">scaling</span><span class="p">,</span> <span class="s2">"The molecules were moved rigidly with their centers."</span>
+        <span class="k">if</span> <span class="n">scaling</span> <span class="o">==</span> <span class="s2">"atoms"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">scaling</span><span class="p">,</span> <span class="s2">"The atoms were scaled with the cell."</span>
+        <span class="k">if</span> <span class="n">scaling</span> <span class="o">!=</span> <span class="s2">"automatic"</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Don't recognize how to move the contents: </span><span class="si">{</span><span class="n">scaling</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+        <span class="kn">from</span><span class="w"> </span><span class="nn">seamm_md_analysis.step_support</span><span class="w"> </span><span class="kn">import</span> <span class="n">cell_widths</span><span class="p">,</span> <span class="n">molecule_extents</span>
+
+        <span class="n">molecules</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">find_molecules</span><span class="p">(</span><span class="n">as_indices</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"atoms"</span><span class="p">,</span> <span class="p">(</span>
+                <span class="s2">"The atoms were scaled with the cell: the system is one connected "</span>
+                <span class="s2">"structure, as in a solid."</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">periodicity</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cell_widths</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">vectors</span><span class="p">()))</span>
+            <span class="n">longest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">molecule_extents</span><span class="p">(</span><span class="n">configuration</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">longest</span> <span class="o">&gt;=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">"atoms"</span><span class="p">,</span> <span class="p">(</span>
+                    <span class="s2">"The atoms were scaled with the cell: a molecule spans the cell, "</span>
+                    <span class="s2">"as in an extended network or a solid."</span>
+                <span class="p">)</span>
+        <span class="k">return</span> <span class="s2">"molecule centers"</span><span class="p">,</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"The </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span><span class="si">}</span><span class="s2"> molecules were moved rigidly with their centers, "</span>
+            <span class="s2">"so their bonds are unchanged."</span>
+        <span class="p">)</span></div>
+
 </pre></div>
 
-           </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
           </div>
-          <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p></p>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
   </div>
-
   
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
-<p>
-<div class="row">
-  <div class="column_left">
-    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
-      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
-    </a>
-  </div>
-  <div class="column">
-    &copy; Copyright 2020-2021, the Molecular Sciences Software Institute,
-    which receives funding from the National Science Foundation under awards OAC-1547580
-    and CHE-2136142.
-  </div>
-  <div class="column_right">
-    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
-      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
-    </a>
-  </div>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
 </div>
 
-
-</footer>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  </footer>
+  </body>
 </html>
