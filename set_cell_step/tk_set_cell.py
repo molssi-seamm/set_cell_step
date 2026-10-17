@@ -48,14 +48,7 @@ class TkSetCell(seamm.TkNode):
     """
 
     def __init__(
-        self,
-        tk_flowchart=None,
-        node=None,
-        canvas=None,
-        x=None,
-        y=None,
-        w=200,
-        h=50
+        self, tk_flowchart=None, node=None, canvas=None, x=None, y=None, w=200, h=50
     ):
         """
         Initialize a graphical node.
@@ -86,13 +79,7 @@ class TkSetCell(seamm.TkNode):
         self.dialog = None
 
         super().__init__(
-            tk_flowchart=tk_flowchart,
-            node=node,
-            canvas=canvas,
-            x=x,
-            y=y,
-            w=w,
-            h=h
+            tk_flowchart=tk_flowchart, node=node, canvas=canvas, x=x, y=y, w=w, h=h
         )
 
     def create_dialog(self):
@@ -114,7 +101,7 @@ class TkSetCell(seamm.TkNode):
         TkSetCell.reset_dialog
         """
 
-        frame = super().create_dialog(title='Set Cell')
+        frame = super().create_dialog(title="Set Cell")
         # Shortcut for parameters
         P = self.node.parameters
 
@@ -123,9 +110,9 @@ class TkSetCell(seamm.TkNode):
             self[key] = P[key].widget(frame)
 
         # Setup bindings
-        self['method'].combobox.bind("<<ComboboxSelected>>", self.reset_dialog)
-        self['method'].combobox.bind("<Return>", self.reset_dialog)
-        self['method'].combobox.bind("<FocusOut>", self.reset_dialog)
+        self["method"].combobox.bind("<<ComboboxSelected>>", self.reset_dialog)
+        self["method"].combobox.bind("<Return>", self.reset_dialog)
+        self["method"].combobox.bind("<FocusOut>", self.reset_dialog)
 
         # and lay them out
         self.reset_dialog()
@@ -155,45 +142,29 @@ class TkSetCell(seamm.TkNode):
         """
 
         # Remove any widgets previously packed
-        frame = self['frame']
+        frame = self["frame"]
         for slave in frame.grid_slaves():
             slave.grid_forget()
 
-        method = self['method'].get()
-
-        # keep track of the row in a variable, so that the layout is flexible
-        # if e.g. rows are skipped to control such as 'method' here
+        # Show the controls that apply, given the method
+        P = self.node.parameters
+        values = {key: self[key].get() for key in P}
         row = 0
         widgets = []
-        self['method'].grid(row=row, column=0, columnspan=2, sticky=tk.W)
-        row += 1
-
-        if method == 'density':
-            self['density'].grid(row=row, column=1, sticky=tk.EW)
-            widgets.append(self['density'])
+        for key in P:
+            if key not in self or not P.applies(key, values):
+                continue
+            level = 0 if key in ("method", "scaling") else 1
+            self[key].grid(row=row, column=level, columnspan=2 - level, sticky=tk.EW)
+            widgets.append(self[key])
             row += 1
-        elif method == 'volume':
-            self['volume'].grid(row=row, column=1, sticky=tk.EW)
-            widgets.append(self['volume'])
-            row += 1
-        elif method == 'cell parameters':
-            for parameter in ('a', 'b', 'c', 'alpha', 'beta', 'gamma'):
-                self[parameter].grid(row=row, column=1, sticky=tk.EW)
-                widgets.append(self[parameter])
-                row += 1
-        elif method == 'uniform contraction/expansion':
-            self['expansion'].grid(row=row, column=1, sticky=tk.EW)
-            widgets.append(self['expansion'])
-            row += 1
-        else:
-            raise RuntimeError(f"Don't recognize method '{method}'!")
 
         # Align the labels
         sw.align_labels(widgets)
 
         # Offset the columns
-        self['frame'].grid_columnconfigure(0, minsize=50)
-        self['frame'].grid_columnconfigure(1, weight=1)
+        self["frame"].grid_columnconfigure(0, minsize=50)
+        self["frame"].grid_columnconfigure(1, weight=1)
 
     def right_click(self, event):
         """
@@ -236,7 +207,7 @@ class TkSetCell(seamm.TkNode):
         if self.dialog is None:
             self.create_dialog()
 
-        self.dialog.activate(geometry='centerscreenfirst')
+        self.dialog.activate(geometry="centerscreenfirst")
 
     def handle_dialog(self, result):
         """Handle the closing of the edit dialog
@@ -256,19 +227,17 @@ class TkSetCell(seamm.TkNode):
         None
         """
 
-        if result is None or result == 'Cancel':
+        if result is None or result == "Cancel":
             self.dialog.deactivate(result)
             return
 
-        if result == 'Help':
+        if result == "Help":
             # display help!!!
             return
 
         if result != "OK":
             self.dialog.deactivate(result)
-            raise RuntimeError(
-                "Don't recognize dialog result '{}'".format(result)
-            )
+            raise RuntimeError("Don't recognize dialog result '{}'".format(result))
 
         self.dialog.deactivate(result)
         # Shortcut for parameters
@@ -291,4 +260,4 @@ class TkSetCell(seamm.TkNode):
         -------
         None
         """
-        print('Help not implemented yet for Set Cell!')
+        print("Help not implemented yet for Set Cell!")

@@ -1,2 +1,6 @@
-seamm==2021.2.2
-
+molsystem
+numpy
+seamm>=2026.10.17
+seamm-md-analysis>=2026.10.17.3
+seamm-util
+seamm-widgets
